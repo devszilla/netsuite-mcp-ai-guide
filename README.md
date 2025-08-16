@@ -14,7 +14,9 @@
 
 <div align="center">
 
-> ⚠️ **Rapidly Evolving Technology:** This document reflects the current state of NetSuite MCP and AI integration as of the date above. Given the fast-paced nature of AI technology and NetSuite updates, portions of this guide may become outdated quickly. Always verify current NetSuite documentation and AI service capabilities.
+<div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
+⚠️ **Rapidly Evolving Technology:** This document reflects the current state of NetSuite MCP and AI integration as of the date above. Given the fast-paced nature of AI technology and NetSuite updates, portions of this guide may become outdated quickly. Always verify current NetSuite documentation and AI service capabilities.
+</div>
 
 </div>
 
@@ -81,9 +83,9 @@ How to architect an AI-powered system that bridges natural language queries with
 
 ## Prerequisites
 
-<div>
+<div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-> **Note:** The examples in this guide use Google Gemini AI + React + Node.js, but this architecture is flexible and can be adapted to your preferred AI service, frontend framework, or backend technology.
+**Note:** The examples in this guide use Google Gemini AI + React + Node.js, but this architecture is flexible and can be adapted to your preferred AI service, frontend framework, or backend technology.
 
 </div>
 
@@ -110,9 +112,13 @@ The MCP Tools SuiteApp provides the interface between your AI and NetSuite data.
 
 ### 1.2 Create Custom Role
 
-> ⚠️ **Important**
->
-> Administrators are not allowed to work with MCP - you must create a custom role with specific permissions.
+<div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+⚠️ **Important**
+
+Administrators are not allowed to work with MCP - you must create a custom role with specific permissions.
+
+</div>
 
 You'll need to create a custom role with these key permissions:
 
@@ -136,13 +142,17 @@ Create an OAuth 2.0 integration record that will allow your AI system to authent
 - **Redirect URI:** Your application's callback URL
 - **Scopes:** Leave all unchecked - the `mcp` scope is handled in the OAuth authorization call, not in the NetSuite integration record
 
-> ⚠️ **Important: Disable These Features**
->
-> Make sure these features are **disabled** in your integration record:
->
-> - **Token-based Authentication**
-> - **TBA: issuetoken Endpoint**
-> - **TBA: Authorization Flow**
+<div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+⚠️ **Important: Disable These Features**
+
+Make sure these features are **disabled** in your integration record:
+
+- **Token-based Authentication**
+- **TBA: issuetoken Endpoint**
+- **TBA: Authorization Flow**
+
+</div>
 
 This integration record will provide you with a Client ID that your AI system will use during the OAuth flow.
 
@@ -194,11 +204,15 @@ Your AI (Gemini in our case) needs to:
 - **Generate Parameters:** Create the right parameters for the tool
 - **Assess Confidence:** Determine if it's confident enough to proceed
 
-> 💡 **Example AI Analysis**
->
-> **User:** "How many customers do we have?"
->
-> **AI Analysis:** Use `runCustomSuiteQL` with `SELECT COUNT(*) FROM customer`
+<div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+💡 **Example AI Analysis**
+
+**User:** "How many customers do we have?"
+
+**AI Analysis:** Use `runCustomSuiteQL` with `SELECT COUNT(*) FROM customer`
+
+</div>
 
 ### 3.2 MCP Tool Execution
 
@@ -209,21 +223,25 @@ Once your AI determines the right tool and parameters, you need to:
 - **Handle Responses:** Process the raw data returned from NetSuite
 - **Manage Errors:** Handle authentication failures and API errors
 
-> 🔧 **MCP Request Format**
->
-> Your requests to NetSuite's MCP server should follow the JSON-RPC 2.0 specification:
->
-> ```json
-> {
->   "jsonrpc": "2.0",
->   "id": "unique_request_id",
->   "method": "tools/call",
->   "params": {
->     "name": "toolName",
->     "arguments": { ... }
->   }
-> }
-> ```
+<div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+🔧 **MCP Request Format**
+
+Your requests to NetSuite's MCP server should follow the JSON-RPC 2.0 specification:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": "unique_request_id",
+  "method": "tools/call",
+  "params": {
+    "name": "toolName",
+    "arguments": { ... }
+  }
+}
+```
+
+</div>
 
 ### 3.3 AI Response Interpretation
 
@@ -234,11 +252,15 @@ This is the key component that makes your AI conversational! Instead of returnin
 - **Handle Edge Cases:** Deal with errors, missing data, or unexpected responses
 - **Provide Context:** Give users relevant information based on their question
 
-> 💬 **Example Response Transformation**
->
-> **Raw NetSuite Response:** `{"expr1": 4214}`
->
-> **AI Interpretation:** "You have 4,214 customers in your system."
+<div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+💬 **Example Response Transformation**
+
+**Raw NetSuite Response:** `{"expr1": 4214}`
+
+**AI Interpretation:** "You have 4,214 customers in your system."
+
+</div>
 
 ### 3.4 MCP Tools Discovery Endpoint
 
@@ -729,14 +751,18 @@ try {
 
 When AI interpretation fails, you need intelligent fallback mechanisms to ensure users still get helpful responses. This is crucial for production reliability.
 
-> 🛡️ **Why Fallbacks Are Essential**
->
-> AI interpretation can fail for many reasons:
->
-> - **API Rate Limits:** Gemini or other AI services may be temporarily unavailable
-> - **Unexpected Data Formats:** NetSuite responses might not match expected patterns
-> - **Network Issues:** Intermittent connectivity problems
-> - **AI Model Limitations:** Complex or ambiguous responses may confuse the AI
+<div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+🛡️ **Why Fallbacks Are Essential**
+
+AI interpretation can fail for many reasons:
+
+- **API Rate Limits:** Gemini or other AI services may be temporarily unavailable
+- **Unexpected Data Formats:** NetSuite responses might not match expected patterns
+- **Network Issues:** Intermittent connectivity problems
+- **AI Model Limitations:** Complex or ambiguous responses may confuse the AI
+
+</div>
 
 **Your fallback strategy should include:**
 
@@ -745,14 +771,18 @@ When AI interpretation fails, you need intelligent fallback mechanisms to ensure
 - **Graceful Degradation:** Provide useful information even when full AI interpretation fails
 - **User Communication:** Clearly indicate when fallback logic is being used
 
-> 💡 **Example Fallback Approach**
->
-> Instead of hardcoding specific field names like `expr1`, design your fallback to:
->
-> - Look for numeric values that might represent counts
-> - Identify currency patterns for financial data
-> - Extract text fields that could be names or descriptions
-> - Provide generic but helpful responses when specific parsing fails
+<div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+💡 **Example Fallback Approach**
+
+Instead of hardcoding specific field names like `expr1`, design your fallback to:
+
+- Look for numeric values that might represent counts
+- Identify currency patterns for financial data
+- Extract text fields that could be names or descriptions
+- Provide generic but helpful responses when specific parsing fails
+
+</div>
 
 ### 4.9 Complete Message Handling Flow
 
@@ -795,9 +825,13 @@ const handleSendMessage = async (inputText) => {
 
 ## Part 5: Development & Testing
 
-> 🔧 **Implementation Approach**
->
-> **Remember:** This guide shows one way to implement the NetSuite MCP integration. You can adapt these concepts to your preferred technology stack and development approach.
+<div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+🔧 **Implementation Approach**
+
+**Remember:** This guide shows one way to implement the NetSuite MCP integration. You can adapt these concepts to your preferred technology stack and development approach.
+
+</div>
 
 ### 5.1 Development Environment
 
