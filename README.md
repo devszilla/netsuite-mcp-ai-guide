@@ -10,7 +10,7 @@ A comprehensive guide for integrating AI assistants with NetSuite using Model Co
 
 ## 🚀 Quick Start
 1. Clone this repository
-2. Open `NETSUITE_MCP_AI_SETUP.html` in your browser
+2. Open `index.html` in your browser
 3. Follow the step-by-step implementation guide
 
 ## 🔧 Technology Stack
