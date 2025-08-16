@@ -1,10 +1,13 @@
+<span style="background: #667eea; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px;">BYOAI - Bring Your Own AI</span>
+<span style="background: #10b981; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">MCP</span>
+<span style="background: #f59e0b; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">NetSuite</span>
+<span style="background: #8b5cf6; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">AI Integration</span>
+
 <div align="center">
 
 <h1>🚀 NetSuite MCP AI Integration<br>Architecture & Key Components Guide</h1>
 
 <p><strong>Understanding how to connect your AI assistant to NetSuite using Model Context Protocol (MCP)</strong></p>
-
-<span style="background: #667eea; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">BYOAI - Bring Your Own AI</span><br><br>
 
 <sub>by: Caleb Moore, Certified SuiteCloud Developer</sub>
 
