@@ -15,7 +15,7 @@
 <div align="center">
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
-⚠️ **Rapidly Evolving Technology:** This document reflects the current state of NetSuite MCP and AI integration as of the date above. Given the fast-paced nature of AI technology and NetSuite updates, portions of this guide may become outdated quickly. Always verify current NetSuite documentation and AI service capabilities.
+⚠️ <strong>Rapidly Evolving Technology:</strong> This document reflects the current state of NetSuite MCP and AI integration as of the date above. Given the fast-paced nature of AI technology and NetSuite updates, portions of this guide may become outdated quickly. Always verify current NetSuite documentation and AI service capabilities.
 </div>
 
 </div>
@@ -24,15 +24,15 @@
 
 ## 🎯 What This Guide Provides
 
-This is a **conceptual guide** that explains the key components and architecture needed to connect your AI assistant to NetSuite MCP. It's not a copy/paste tutorial, but rather helps you understand what you need to build and how the pieces fit together.
+This is a <strong>conceptual guide</strong> that explains the key components and architecture needed to connect your AI assistant to NetSuite MCP. It's not a copy/paste tutorial, but rather helps you understand what you need to build and how the pieces fit together.
 
 ## 🔧 Technology Implementation Note
 
-**This concept was proven using:** Google Gemini AI + React-based chatbot interface
+<strong>This concept was proven using:</strong> Google Gemini AI + React-based chatbot interface
 
-**However, there are many ways to leverage NetSuite's AI Connector:** You could use Claude, GPT-4, Azure OpenAI, or any other AI service. The architecture principles remain the same regardless of your AI choice.
+<strong>However, there are many ways to leverage NetSuite's AI Connector:</strong> You could use Claude, GPT-4, Azure OpenAI, or any other AI service. The architecture principles remain the same regardless of your AI choice.
 
-**Current State:** While this integration concept has been proven to work, it isn't perfect and would still benefit from further refinement. Expect some bugs and edge cases that need addressing.
+<strong>Current State:</strong> While this integration concept has been proven to work, it isn't perfect and would still benefit from further refinement. Expect some bugs and edge cases that need addressing.
 
 ## 📋 Table of Contents
 
@@ -65,21 +65,21 @@ How to architect an AI-powered system that bridges natural language queries with
 👤 User Question → 🧠 AI Analysis → 🔧 MCP Execution → 💬 AI Interpretation
 ```
 
-**Example Flow:**
+<strong>Example Flow:</strong>
 
-1. **User Question:** "How many customers do we have?"
-2. **AI Analysis:** Gemini determines: use runCustomSuiteQL with COUNT query
-3. **MCP Execution:** NetSuite MCP tool runs: `SELECT COUNT(*) FROM customer`
-4. **AI Interpretation:** Gemini converts raw data to: "You have 4,214 customers"
+1. <strong>User Question:</strong> "How many customers do we have?"
+2. <strong>AI Analysis:</strong> Gemini determines: use runCustomSuiteQL with COUNT query
+3. <strong>MCP Execution:</strong> NetSuite MCP tool runs: `SELECT COUNT(*) FROM customer`
+4. <strong>AI Interpretation:</strong> Gemini converts raw data to: "You have 4,214 customers"
 
 ### 🚀 Key Features
 
-| Feature                           | Description                                                                           |
-| --------------------------------- | ------------------------------------------------------------------------------------- |
-| 🧠 **AI Query Analysis**          | Your AI analyzes user questions and selects the right MCP tool with proper parameters |
-| 🔧 **MCP Tool Execution**         | Executes the selected tool against NetSuite and retrieves raw data                    |
-| 💬 **AI Response Interpretation** | Your AI interprets the NetSuite results and provides conversational answers           |
-| 🛡️ **Smart Fallbacks**            | Intelligent parsing when AI interpretation fails                                      |
+| Feature                                        | Description                                                                           |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------- |
+| 🧠 <strong>AI Query Analysis</strong>          | Your AI analyzes user questions and selects the right MCP tool with proper parameters |
+| 🔧 <strong>MCP Tool Execution</strong>         | Executes the selected tool against NetSuite and retrieves raw data                    |
+| 💬 <strong>AI Response Interpretation</strong> | Your AI interprets the NetSuite results and provides conversational answers           |
+| 🛡️ <strong>Smart Fallbacks</strong>            | Intelligent parsing when AI interpretation fails                                      |
 
 ---
 
@@ -87,16 +87,16 @@ How to architect an AI-powered system that bridges natural language queries with
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-**Note:** The examples in this guide use Google Gemini AI + React + Node.js, but this architecture is flexible and can be adapted to your preferred AI service, frontend framework, or backend technology.
+<strong>Note:</strong> The examples in this guide use Google Gemini AI + React + Node.js, but this architecture is flexible and can be adapted to your preferred AI service, frontend framework, or backend technology.
 
 </div>
 
 ### Before You Begin
 
-- **NetSuite Account:** Administrative access required
-- **AI Service:** API key for your chosen AI provider (Gemini, Claude, GPT-4, Azure OpenAI, etc.)
-- **Development Environment:** Your preferred frontend framework (React, Vue, Angular, etc.) and backend technology (Node.js, Python, .NET, etc.)
-- **Development Skills:** Basic knowledge of your chosen technologies and REST API integration
+- <strong>NetSuite Account:</strong> Administrative access required
+- <strong>AI Service:</strong> API key for your chosen AI provider (Gemini, Claude, GPT-4, Azure OpenAI, etc.)
+- <strong>Development Environment:</strong> Your preferred frontend framework (React, Vue, Angular, etc.) and backend technology (Node.js, Python, .NET, etc.)
+- <strong>Development Skills:</strong> Basic knowledge of your chosen technologies and REST API integration
 
 ---
 
@@ -108,15 +108,15 @@ Before you can connect your AI to NetSuite, you need to set up the MCP (Model Co
 
 The MCP Tools SuiteApp provides the interface between your AI and NetSuite data. You'll need to:
 
-1. Navigate to **Customization → SuiteCloud Development → SuiteApp Marketplace**
-2. Search for and install **MCP Tools**
+1. Navigate to <strong>Customization → SuiteCloud Development → SuiteApp Marketplace</strong>
+2. Search for and install <strong>MCP Tools</strong>
 3. Wait for the installation to complete
 
 ### 1.2 Create Custom Role
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-⚠️ **Important**
+⚠️ <strong>Important</strong>
 
 Administrators are not allowed to work with MCP - you must create a custom role with specific permissions.
 
@@ -124,9 +124,9 @@ Administrators are not allowed to work with MCP - you must create a custom role 
 
 You'll need to create a custom role with these key permissions:
 
-- **MCP Server Connection** - Allows connection to the MCP server
-- **OAuth 2.0 Authorized Applications Management** - Manages OAuth integrations
-- **Log in using OAuth 2.0 Access Tokens** - Enables token-based authentication
+- <strong>MCP Server Connection</strong> - Allows connection to the MCP server
+- <strong>OAuth 2.0 Authorized Applications Management</strong> - Manages OAuth integrations
+- <strong>Log in using OAuth 2.0 Access Tokens</strong> - Enables token-based authentication
 
 This role will be assigned to the user account that your AI integration will use to connect to NetSuite.
 
@@ -138,21 +138,21 @@ Assign the custom MCP role to the user account that will be used for your AI int
 
 Create an OAuth 2.0 integration record that will allow your AI system to authenticate with NetSuite. Key configuration points:
 
-- **Application Type:** Public Client
-- **State:** Enabled
-- **Authorization Code Grant:** Enabled for secure authentication
-- **Redirect URI:** Your application's callback URL
-- **Scopes:** Leave all unchecked - the `mcp` scope is handled in the OAuth authorization call, not in the NetSuite integration record
+- <strong>Application Type:</strong> Public Client
+- <strong>State:</strong> Enabled
+- <strong>Authorization Code Grant:</strong> Enabled for secure authentication
+- <strong>Redirect URI:</strong> Your application's callback URL
+- <strong>Scopes:</strong> Leave all unchecked - the `mcp` scope is handled in the OAuth authorization call, not in the NetSuite integration record
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-⚠️ **Important: Disable These Features**
+⚠️ <strong>Important: Disable These Features</strong>
 
-Make sure these features are **disabled** in your integration record:
+Make sure these features are <strong>disabled</strong> in your integration record:
 
-- **Token-based Authentication**
-- **TBA: issuetoken Endpoint**
-- **TBA: Authorization Flow**
+- <strong>Token-based Authentication</strong>
+- <strong>TBA: issuetoken Endpoint</strong>
+- <strong>TBA: Authorization Flow</strong>
 
 </div>
 
@@ -168,28 +168,28 @@ Your AI integration system will need several core components to function properl
 
 You'll need a backend server that handles:
 
-- **OAuth Flow:** Manages authentication with NetSuite
-- **MCP Proxy:** Forwards requests to NetSuite's MCP server
-- **Token Management:** Handles access token refresh and storage
-- **Error Handling:** Manages API failures and retries
+- <strong>OAuth Flow:</strong> Manages authentication with NetSuite
+- <strong>MCP Proxy:</strong> Forwards requests to NetSuite's MCP server
+- <strong>Token Management:</strong> Handles access token refresh and storage
+- <strong>Error Handling:</strong> Manages API failures and retries
 
 ### 2.2 Frontend Interface
 
 Your user interface should provide:
 
-- **Configuration Panel:** For NetSuite credentials and settings
-- **Chat Interface:** Where users ask questions
-- **Status Indicators:** Show connection and tool availability
-- **Response Display:** Show AI-generated answers
+- <strong>Configuration Panel:</strong> For NetSuite credentials and settings
+- <strong>Chat Interface:</strong> Where users ask questions
+- <strong>Status Indicators:</strong> Show connection and tool availability
+- <strong>Response Display:</strong> Show AI-generated answers
 
 ### 2.3 AI Integration
 
 The core intelligence layer includes:
 
-- **Query Analysis:** AI that understands user questions
-- **Tool Selection:** Maps questions to appropriate MCP tools
-- **Response Generation:** Converts raw data to conversational answers
-- **Fallback Logic:** Handles cases where AI interpretation fails
+- <strong>Query Analysis:</strong> AI that understands user questions
+- <strong>Tool Selection:</strong> Maps questions to appropriate MCP tools
+- <strong>Response Generation:</strong> Converts raw data to conversational answers
+- <strong>Fallback Logic:</strong> Handles cases where AI interpretation fails
 
 ---
 
@@ -201,18 +201,18 @@ This is where the magic happens! Your AI needs to understand user questions, sel
 
 Your AI (Gemini in our case) needs to:
 
-- **Parse Natural Language:** Understand what the user is asking
-- **Map to MCP Tools:** Determine which NetSuite MCP tool to use
-- **Generate Parameters:** Create the right parameters for the tool
-- **Assess Confidence:** Determine if it's confident enough to proceed
+- <strong>Parse Natural Language:</strong> Understand what the user is asking
+- <strong>Map to MCP Tools:</strong> Determine which NetSuite MCP tool to use
+- <strong>Generate Parameters:</strong> Create the right parameters for the tool
+- <strong>Assess Confidence:</strong> Determine if it's confident enough to proceed
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-💡 **Example AI Analysis**
+💡 <strong>Example AI Analysis</strong>
 
-**User:** "How many customers do we have?"
+<strong>User:</strong> "How many customers do we have?"
 
-**AI Analysis:** Use `runCustomSuiteQL` with `SELECT COUNT(*) FROM customer`
+<strong>AI Analysis:</strong> Use `runCustomSuiteQL` with `SELECT COUNT(*) FROM customer`
 
 </div>
 
@@ -220,14 +220,14 @@ Your AI (Gemini in our case) needs to:
 
 Once your AI determines the right tool and parameters, you need to:
 
-- **Authenticate:** Use OAuth tokens to access NetSuite's MCP server
-- **Format Requests:** Structure JSON-RPC calls to the MCP endpoint
-- **Handle Responses:** Process the raw data returned from NetSuite
-- **Manage Errors:** Handle authentication failures and API errors
+- <strong>Authenticate:</strong> Use OAuth tokens to access NetSuite's MCP server
+- <strong>Format Requests:</strong> Structure JSON-RPC calls to the MCP endpoint
+- <strong>Handle Responses:</strong> Process the raw data returned from NetSuite
+- <strong>Manage Errors:</strong> Handle authentication failures and API errors
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-🔧 **MCP Request Format**
+🔧 <strong>MCP Request Format</strong>
 
 Your requests to NetSuite's MCP server should follow the JSON-RPC 2.0 specification:
 
@@ -249,18 +249,18 @@ Your requests to NetSuite's MCP server should follow the JSON-RPC 2.0 specificat
 
 This is the key component that makes your AI conversational! Instead of returning raw JSON data, your AI needs to:
 
-- **Parse NetSuite Responses:** Extract meaningful data from the MCP tool results
-- **Generate Natural Language:** Convert technical data into conversational answers
-- **Handle Edge Cases:** Deal with errors, missing data, or unexpected responses
-- **Provide Context:** Give users relevant information based on their question
+- <strong>Parse NetSuite Responses:</strong> Extract meaningful data from the MCP tool results
+- <strong>Generate Natural Language:</strong> Convert technical data into conversational answers
+- <strong>Handle Edge Cases:</strong> Deal with errors, missing data, or unexpected responses
+- <strong>Provide Context:</strong> Give users relevant information based on their question
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-💬 **Example Response Transformation**
+💬 <strong>Example Response Transformation</strong>
 
-**Raw NetSuite Response:** `{"expr1": 4214}`
+<strong>Raw NetSuite Response:</strong> `{"expr1": 4214}`
 
-**AI Interpretation:** "You have 4,214 customers in your system."
+<strong>AI Interpretation:</strong> "You have 4,214 customers in your system."
 
 </div>
 
@@ -466,12 +466,12 @@ The main React component handles:
 - AI-powered response interpretation
 - User interface for configuration and chat
 
-| Feature                     | Description                                                                     |
-| --------------------------- | ------------------------------------------------------------------------------- |
-| 🔐 **OAuth 2.0 PKCE Flow**  | Secure authentication with NetSuite using industry-standard OAuth 2.0 with PKCE |
-| 🔍 **MCP Tool Discovery**   | Automatically fetches available tools from NetSuite's MCP server                |
-| 🤖 **AI-Powered Responses** | Uses Google Gemini to interpret NetSuite data naturally                         |
-| 🛡️ **Smart Fallbacks**      | Handles errors gracefully with intelligent parsing                              |
+| Feature                                  | Description                                                                     |
+| ---------------------------------------- | ------------------------------------------------------------------------------- |
+| 🔐 <strong>OAuth 2.0 PKCE Flow</strong>  | Secure authentication with NetSuite using industry-standard OAuth 2.0 with PKCE |
+| 🔍 <strong>MCP Tool Discovery</strong>   | Automatically fetches available tools from NetSuite's MCP server                |
+| 🤖 <strong>AI-Powered Responses</strong> | Uses Google Gemini to interpret NetSuite data naturally                         |
+| 🛡️ <strong>Smart Fallbacks</strong>      | Handles errors gracefully with intelligent parsing                              |
 
 ### 4.3 Key State Variables
 
@@ -755,27 +755,27 @@ When AI interpretation fails, you need intelligent fallback mechanisms to ensure
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-🛡️ **Why Fallbacks Are Essential**
+🛡️ <strong>Why Fallbacks Are Essential</strong>
 
 AI interpretation can fail for many reasons:
 
-- **API Rate Limits:** Gemini or other AI services may be temporarily unavailable
-- **Unexpected Data Formats:** NetSuite responses might not match expected patterns
-- **Network Issues:** Intermittent connectivity problems
-- **AI Model Limitations:** Complex or ambiguous responses may confuse the AI
+- <strong>API Rate Limits:</strong> Gemini or other AI services may be temporarily unavailable
+- <strong>Unexpected Data Formats:</strong> NetSuite responses might not match expected patterns
+- <strong>Network Issues:</strong> Intermittent connectivity problems
+- <strong>AI Model Limitations:</strong> Complex or ambiguous responses may confuse the AI
 
 </div>
 
-**Your fallback strategy should include:**
+<strong>Your fallback strategy should include:</strong>
 
-- **Pattern Recognition:** Use regex or string matching to identify common response types
-- **Data Extraction:** Parse JSON responses to find key values (counts, balances, names, etc.)
-- **Graceful Degradation:** Provide useful information even when full AI interpretation fails
-- **User Communication:** Clearly indicate when fallback logic is being used
+- <strong>Pattern Recognition:</strong> Use regex or string matching to identify common response types
+- <strong>Data Extraction:</strong> Parse JSON responses to find key values (counts, balances, names, etc.)
+- <strong>Graceful Degradation:</strong> Provide useful information even when full AI interpretation fails
+- <strong>User Communication:</strong> Clearly indicate when fallback logic is being used
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-💡 **Example Fallback Approach**
+💡 <strong>Example Fallback Approach</strong>
 
 Instead of hardcoding specific field names like `expr1`, design your fallback to:
 
@@ -829,9 +829,9 @@ const handleSendMessage = async (inputText) => {
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-🔧 **Implementation Approach**
+🔧 <strong>Implementation Approach</strong>
 
-**Remember:** This guide shows one way to implement the NetSuite MCP integration. You can adapt these concepts to your preferred technology stack and development approach.
+<strong>Remember:</strong> This guide shows one way to implement the NetSuite MCP integration. You can adapt these concepts to your preferred technology stack and development approach.
 
 </div>
 
@@ -839,20 +839,20 @@ const handleSendMessage = async (inputText) => {
 
 You'll need to set up a development environment that supports:
 
-- **Backend Server:** For OAuth handling and MCP proxy functionality
-- **Frontend Interface:** For user interaction and configuration
-- **AI Integration:** For query analysis and response interpretation
-- **Development Tools:** For debugging and testing your integration
+- <strong>Backend Server:</strong> For OAuth handling and MCP proxy functionality
+- <strong>Frontend Interface:</strong> For user interaction and configuration
+- <strong>AI Integration:</strong> For query analysis and response interpretation
+- <strong>Development Tools:</strong> For debugging and testing your integration
 
 ### 5.2 Testing Strategy
 
 Test your integration systematically:
 
-- **OAuth Flow:** Ensure authentication works end-to-end
-- **MCP Tool Discovery:** Verify you can retrieve available tools
-- **Tool Execution:** Test basic MCP tool calls
-- **AI Interpretation:** Validate that AI responses make sense
-- **Error Handling:** Test fallback mechanisms and error scenarios
+- <strong>OAuth Flow:</strong> Ensure authentication works end-to-end
+- <strong>MCP Tool Discovery:</strong> Verify you can retrieve available tools
+- <strong>Tool Execution:</strong> Test basic MCP tool calls
+- <strong>AI Interpretation:</strong> Validate that AI responses make sense
+- <strong>Error Handling:</strong> Test fallback mechanisms and error scenarios
 
 ---
 
@@ -871,9 +871,9 @@ Once your system is set up, the basic workflow is:
 
 You'll need to configure:
 
-- **NetSuite Credentials:** Account ID and Client ID from your integration record
-- **AI Service:** API keys and configuration for your chosen AI provider
-- **Environment Settings:** URLs, ports, and other configuration values
+- <strong>NetSuite Credentials:</strong> Account ID and Client ID from your integration record
+- <strong>AI Service:</strong> API keys and configuration for your chosen AI provider
+- <strong>Environment Settings:</strong> URLs, ports, and other configuration values
 
 ### 6.3 Validation Steps
 
@@ -890,24 +890,24 @@ Verify your integration works by:
 
 ### 7.1 Common Issues
 
-**"MCP tools not available"**
+<strong>"MCP tools not available"</strong>
 
 - Ensure the MCP Tools SuiteApp is installed
 - Check that your user has the custom MCP role assigned
 - Verify the OAuth scope includes "mcp"
 
-**"Authentication failed"**
+<strong>"Authentication failed"</strong>
 
 - Check that your Client ID is correct
 - Ensure the redirect URI matches exactly: `http://localhost:3000`
 - Verify the integration record is enabled
 
-**"Gemini API key not configured"**
+<strong>"Gemini API key not configured"</strong>
 
 - Add your Gemini API key to the `.env` file
 - Restart the development server
 
-**Port conflicts**
+<strong>Port conflicts</strong>
 
 - Ensure ports 3000 and 3001 are available
 - Check for other running Node.js processes
@@ -927,47 +927,47 @@ The application includes comprehensive console logging. Check the browser consol
 
 ### 8.1 Security
 
-- **Store sensitive configuration in environment variables**
-- **Implement proper session management**
-- **Use HTTPS in production**
-- **Consider implementing rate limiting**
+- <strong>Store sensitive configuration in environment variables</strong>
+- <strong>Implement proper session management</strong>
+- <strong>Use HTTPS in production</strong>
+- <strong>Consider implementing rate limiting</strong>
 
 ### 8.2 Deployment
 
-- **Build the React app:** `npm run build`
-- **Deploy the backend to a cloud service** (Heroku, AWS, etc.)
-- **Update redirect URIs for production domains**
-- **Configure CORS for production origins**
+- <strong>Build the React app:</strong> `npm run build`
+- <strong>Deploy the backend to a cloud service</strong> (Heroku, AWS, etc.)
+- <strong>Update redirect URIs for production domains</strong>
+- <strong>Configure CORS for production origins</strong>
 
 ### 8.3 Monitoring
 
-- **Implement logging for production environments**
-- **Monitor API usage and performance**
-- **Set up error tracking and alerting**
+- <strong>Implement logging for production environments</strong>
+- <strong>Monitor API usage and performance</strong>
+- <strong>Set up error tracking and alerting</strong>
 
 ---
 
 ## Key Takeaway
 
-**Yes, you CAN connect your AI assistant to NetSuite using MCP!** While it may have some bugs and challenges (as any integration does), the core architecture works and provides a powerful way to give users conversational access to their NetSuite data.
+<strong>Yes, you CAN connect your AI assistant to NetSuite using MCP!</strong> While it may have some bugs and challenges (as any integration does), the core architecture works and provides a powerful way to give users conversational access to their NetSuite data.
 
 ### 🚀 What We've Proven
 
 Using Gemini AI, we successfully created a system that:
 
-1. **Understands natural language questions** about NetSuite data
-2. **Automatically selects and executes** the right MCP tools
-3. **Converts raw NetSuite responses** into conversational answers
-4. **Provides a user-friendly interface** for business intelligence
+1. <strong>Understands natural language questions</strong> about NetSuite data
+2. <strong>Automatically selects and executes</strong> the right MCP tools
+3. <strong>Converts raw NetSuite responses</strong> into conversational answers
+4. <strong>Provides a user-friendly interface</strong> for business intelligence
 
 ### 🔒 Key Features
 
-| Feature            | Description                                       |
-| ------------------ | ------------------------------------------------- |
-| 🔒 **Secure**      | OAuth 2.0 PKCE authentication with NetSuite       |
-| 🧠 **Intelligent** | AI-powered query analysis and response generation |
-| ⚡ **Real-time**   | Live data access through NetSuite's MCP server    |
-| 🔧 **Extensible**  | Easy to add new MCP tools and capabilities        |
+| Feature                         | Description                                       |
+| ------------------------------- | ------------------------------------------------- |
+| 🔒 <strong>Secure</strong>      | OAuth 2.0 PKCE authentication with NetSuite       |
+| 🧠 <strong>Intelligent</strong> | AI-powered query analysis and response generation |
+| ⚡ <strong>Real-time</strong>   | Live data access through NetSuite's MCP server    |
+| 🔧 <strong>Extensible</strong>  | Easy to add new MCP tools and capabilities        |
 
 The integration works, it's powerful, and it opens up new possibilities for how users interact with their NetSuite data. While there are challenges to overcome, the foundation is solid and the potential is enormous.
 
@@ -983,18 +983,18 @@ This guide is open source and we welcome contributions! The repository is hosted
 
 ### How to Contribute
 
-**Found an error or outdated information?**
+<strong>Found an error or outdated information?</strong>
 
 - Open an issue describing the problem
 - Or submit a pull request with the fix
 
-**Want to add new content?**
+<strong>Want to add new content?</strong>
 
 - Add new sections, examples, or troubleshooting tips
 - Improve existing explanations
 - Add code examples for different technology stacks
 
-**Have a different approach?**
+<strong>Have a different approach?</strong>
 
 - Share alternative implementation methods
 - Add examples using different AI services (Claude, GPT-4, etc.)
@@ -1002,10 +1002,10 @@ This guide is open source and we welcome contributions! The repository is hosted
 
 ### Contribution Guidelines
 
-1. **Keep it practical** - Focus on actionable guidance
-2. **Test your changes** - Ensure examples work
-3. **Follow the existing style** - Maintain consistency with current formatting
-4. **Update the table of contents** - If adding new sections
+1. <strong>Keep it practical</strong> - Focus on actionable guidance
+2. <strong>Test your changes</strong> - Ensure examples work
+3. <strong>Follow the existing style</strong> - Maintain consistency with current formatting
+4. <strong>Update the table of contents</strong> - If adding new sections
 
 ### Quick Start for Contributors
 
