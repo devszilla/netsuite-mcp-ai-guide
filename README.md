@@ -1,4 +1,4 @@
-<span style="background: #667eea; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">BYOAI</span>
+<span style="background: #667eea; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">BYOAI</span>
 <span style="background: #10b981; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">MCP</span>
 <span style="background: #f59e0b; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">NetSuite</span>
 
