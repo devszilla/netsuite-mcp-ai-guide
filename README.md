@@ -231,9 +231,9 @@ Once your AI determines the right tool and parameters, you need to:
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-🔧 <strong>MCP Request Format</strong>
+<p>🔧 <strong>MCP Request Format</strong></p>
 
-Your requests to NetSuite's MCP server should follow the JSON-RPC 2.0 specification:
+<p>Your requests to NetSuite's MCP server should follow the JSON-RPC 2.0 specification:</p>
 
 <pre><code class="language-json">{
   "jsonrpc": "2.0",
