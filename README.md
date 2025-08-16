@@ -46,6 +46,8 @@ This is a **conceptual guide** that explains the key components and architecture
 - [Part 6: Getting Started](#part-6-getting-started)
 - [Part 7: Troubleshooting](#part-7-troubleshooting)
 - [Part 8: Production Considerations](#part-8-production-considerations)
+- [Key Takeaway](#key-takeaway)
+- [Contributing to This Guide](#contributing-to-this-guide)
 
 ---
 
@@ -972,3 +974,44 @@ The integration works, it's powerful, and it opens up new possibilities for how 
 ---
 
 _This guide represents the current state of NetSuite MCP AI integration as of August 15, 2025. Given the rapidly evolving nature of this technology, always verify current NetSuite documentation and AI service capabilities._
+
+---
+
+## 🤝 Contributing to This Guide
+
+This guide is open source and we welcome contributions! The repository is hosted at [https://github.com/devszilla/netsuite-mcp-ai-guide](https://github.com/devszilla/netsuite-mcp-ai-guide).
+
+### How to Contribute
+
+**Found an error or outdated information?**
+
+- Open an issue describing the problem
+- Or submit a pull request with the fix
+
+**Want to add new content?**
+
+- Add new sections, examples, or troubleshooting tips
+- Improve existing explanations
+- Add code examples for different technology stacks
+
+**Have a different approach?**
+
+- Share alternative implementation methods
+- Add examples using different AI services (Claude, GPT-4, etc.)
+- Include backend technologies beyond Node.js
+
+### Contribution Guidelines
+
+1. **Keep it practical** - Focus on actionable guidance
+2. **Test your changes** - Ensure examples work
+3. **Follow the existing style** - Maintain consistency with current formatting
+4. **Update the table of contents** - If adding new sections
+
+### Quick Start for Contributors
+
+```bash
+git clone https://github.com/devszilla/netsuite-mcp-ai-guide.git
+cd netsuite-mcp-ai-guide
+# Make your changes
+# Submit a pull request
+```
