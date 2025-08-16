@@ -13,7 +13,7 @@
 <style>
 /* Fix callout box spacing */
 div[style*="background: #fff3cd"], div[style*="background: #e3f2fd"] {
-  padding: 15px 15px 12px 15px !important; /* top, right, bottom, left */
+  padding: 15px 15px 14px 15px !important; /* top, right, bottom, left */
 }
 
 div[style*="background: #fff3cd"] p, 
