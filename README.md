@@ -4,7 +4,7 @@
 
 <p><strong>Understanding how to connect your AI assistant to NetSuite using Model Context Protocol (MCP)</strong></p>
 
-<span style="background: #667eea; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">BYOAI - Bring Your Own AI</span>
+<span style="background: #667eea; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">BYOAI - Bring Your Own AI</span><br>
 
 <sub>Author: Caleb Moore, Certified SuiteCloud Dev, Aug 15 2025</sub>
 
