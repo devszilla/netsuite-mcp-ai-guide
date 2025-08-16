@@ -10,6 +10,27 @@
 
 </div>
 
+<style>
+/* Fix callout box spacing */
+div[style*="background: #fff3cd"], div[style*="background: #e3f2fd"] {
+  padding: 15px 15px 10px 15px !important; /* top, right, bottom, left */
+}
+
+div[style*="background: #fff3cd"] p, 
+div[style*="background: #e3f2fd"] p,
+div[style*="background: #fff3cd"] ul, 
+div[style*="background: #e3f2fd"] ul {
+  margin: 0 0 10px 0 !important; /* top, right, bottom, left */
+}
+
+div[style*="background: #fff3cd"] p:last-child, 
+div[style*="background: #e3f2fd"] p:last-child,
+div[style*="background: #fff3cd"] ul:last-child, 
+div[style*="background: #e3f2fd"] ul:last-child {
+  margin-bottom: 0 !important; /* Remove bottom margin from last element */
+}
+</style>
+
 ---
 
 <div align="center">
