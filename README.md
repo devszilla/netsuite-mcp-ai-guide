@@ -15,7 +15,9 @@
 <div align="center">
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
-⚠️ <strong>Rapidly Evolving Technology:</strong> This document reflects the current state of NetSuite MCP and AI integration as of the date above. Given the fast-paced nature of AI technology and NetSuite updates, portions of this guide may become outdated quickly. Always verify current NetSuite documentation and AI service capabilities.
+
+<p>⚠️ <strong>Rapidly Evolving Technology:</strong> This document reflects the current state of NetSuite MCP and AI integration as of the date above. Given the fast-paced nature of AI technology and NetSuite updates, portions of this guide may become outdated quickly. Always verify current NetSuite documentation and AI service capabilities.</p>
+
 </div>
 
 </div>
@@ -87,7 +89,7 @@ How to architect an AI-powered system that bridges natural language queries with
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-<strong>Note:</strong> The examples in this guide use Google Gemini AI + React + Node.js, but this architecture is flexible and can be adapted to your preferred AI service, frontend framework, or backend technology.
+<p><strong>Note:</strong> The examples in this guide use Google Gemini AI + React + Node.js, but this architecture is flexible and can be adapted to your preferred AI service, frontend framework, or backend technology.</p>
 
 </div>
 
@@ -116,9 +118,9 @@ The MCP Tools SuiteApp provides the interface between your AI and NetSuite data.
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-⚠️ <strong>Important</strong>
+<p>⚠️ <strong>Important</strong></p>
 
-Administrators are not allowed to work with MCP - you must create a custom role with specific permissions.
+<p>Administrators are not allowed to work with MCP - you must create a custom role with specific permissions.</p>
 
 </div>
 
@@ -146,13 +148,15 @@ Create an OAuth 2.0 integration record that will allow your AI system to authent
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-⚠️ <strong>Important: Disable These Features</strong>
+<p>⚠️ <strong>Important: Disable These Features</strong></p>
 
-Make sure these features are <strong>disabled</strong> in your integration record:
+<p>Make sure these features are <strong>disabled</strong> in your integration record:</p>
 
-- <strong>Token-based Authentication</strong>
-- <strong>TBA: issuetoken Endpoint</strong>
-- <strong>TBA: Authorization Flow</strong>
+<ul>
+<li><strong>Token-based Authentication</strong></li>
+<li><strong>TBA: issuetoken Endpoint</strong></li>
+<li><strong>TBA: Authorization Flow</strong></li>
+</ul>
 
 </div>
 
@@ -208,11 +212,11 @@ Your AI (Gemini in our case) needs to:
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-💡 <strong>Example AI Analysis</strong>
+<p>💡 <strong>Example AI Analysis</strong></p>
 
-<strong>User:</strong> "How many customers do we have?"
+<p><strong>User:</strong> "How many customers do we have?"</p>
 
-<strong>AI Analysis:</strong> Use `runCustomSuiteQL` with `SELECT COUNT(*) FROM customer`
+<p><strong>AI Analysis:</strong> Use `runCustomSuiteQL` with `SELECT COUNT(*) FROM customer`</p>
 
 </div>
 
@@ -231,8 +235,7 @@ Once your AI determines the right tool and parameters, you need to:
 
 Your requests to NetSuite's MCP server should follow the JSON-RPC 2.0 specification:
 
-```json
-{
+<pre><code class="language-json">{
   "jsonrpc": "2.0",
   "id": "unique_request_id",
   "method": "tools/call",
@@ -240,8 +243,7 @@ Your requests to NetSuite's MCP server should follow the JSON-RPC 2.0 specificat
     "name": "toolName",
     "arguments": { ... }
   }
-}
-```
+}</code></pre>
 
 </div>
 
@@ -256,11 +258,11 @@ This is the key component that makes your AI conversational! Instead of returnin
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-💬 <strong>Example Response Transformation</strong>
+<p>💬 <strong>Example Response Transformation</strong></p>
 
-<strong>Raw NetSuite Response:</strong> `{"expr1": 4214}`
+<p><strong>Raw NetSuite Response:</strong> `{"expr1": 4214}`</p>
 
-<strong>AI Interpretation:</strong> "You have 4,214 customers in your system."
+<p><strong>AI Interpretation:</strong> "You have 4,214 customers in your system."</p>
 
 </div>
 
@@ -755,14 +757,16 @@ When AI interpretation fails, you need intelligent fallback mechanisms to ensure
 
 <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-🛡️ <strong>Why Fallbacks Are Essential</strong>
+<p>🛡️ <strong>Why Fallbacks Are Essential</strong></p>
 
-AI interpretation can fail for many reasons:
+<p>AI interpretation can fail for many reasons:</p>
 
-- <strong>API Rate Limits:</strong> Gemini or other AI services may be temporarily unavailable
-- <strong>Unexpected Data Formats:</strong> NetSuite responses might not match expected patterns
-- <strong>Network Issues:</strong> Intermittent connectivity problems
-- <strong>AI Model Limitations:</strong> Complex or ambiguous responses may confuse the AI
+<ul>
+<li><strong>API Rate Limits:</strong> Gemini or other AI services may be temporarily unavailable</li>
+<li><strong>Unexpected Data Formats:</strong> NetSuite responses might not match expected patterns</li>
+<li><strong>Network Issues:</strong> Intermittent connectivity problems</li>
+<li><strong>AI Model Limitations:</strong> Complex or ambiguous responses may confuse the AI</li>
+</ul>
 
 </div>
 
@@ -775,14 +779,16 @@ AI interpretation can fail for many reasons:
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-💡 <strong>Example Fallback Approach</strong>
+<p>💡 <strong>Example Fallback Approach</strong></p>
 
-Instead of hardcoding specific field names like `expr1`, design your fallback to:
+<p>Instead of hardcoding specific field names like `expr1`, design your fallback to:</p>
 
-- Look for numeric values that might represent counts
-- Identify currency patterns for financial data
-- Extract text fields that could be names or descriptions
-- Provide generic but helpful responses when specific parsing fails
+<ul>
+<li>Look for numeric values that might represent counts</li>
+<li>Identify currency patterns for financial data</li>
+<li>Extract text fields that could be names or descriptions</li>
+<li>Provide generic but helpful responses when specific parsing fails</li>
+</ul>
 
 </div>
 
@@ -829,9 +835,9 @@ const handleSendMessage = async (inputText) => {
 
 <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
 
-🔧 <strong>Implementation Approach</strong>
+<p>🔧 <strong>Implementation Approach</strong></p>
 
-<strong>Remember:</strong> This guide shows one way to implement the NetSuite MCP integration. You can adapt these concepts to your preferred technology stack and development approach.
+<p><strong>Remember:</strong> This guide shows one way to implement the NetSuite MCP integration. You can adapt these concepts to your preferred technology stack and development approach.</p>
 
 </div>
 
