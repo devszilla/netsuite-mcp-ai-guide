@@ -8,7 +8,7 @@
 
 <p><strong>Understanding how to connect your AI assistant to NetSuite using Model Context Protocol (MCP)</strong></p>
 
-<p style="margin-top: -10px; margin-bottom: 0; font-size: 0.9em; color: #666;">by: Caleb Moore, Certified SuiteCloud Developer</p>
+<p style="margin-top: -10px; margin-bottom: 0; font-size: 0.9em; color: #666;">By: Caleb Moore, <em>Certified SuiteCloud Developer</em></p>
 
 </div>
 
