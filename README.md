@@ -4,7 +4,7 @@
 
 <div align="center">
 
-<h1>🚀 NetSuite MCP AI Integration<br>Architecture & Key Components Guide</h1>
+<h1>🚀 NetSuite MCP AI Integration Guide</h1>
 
 <p><strong>Understanding how to connect your AI assistant to NetSuite using Model Context Protocol (MCP)</strong></p>
 
