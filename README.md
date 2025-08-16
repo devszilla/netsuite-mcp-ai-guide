@@ -947,7 +947,7 @@ The application includes comprehensive console logging. Check the browser consol
 
 ---
 
-## 🎯 Key Takeaway
+## Key Takeaway
 
 **Yes, you CAN connect your AI assistant to NetSuite using MCP!** While it may have some bugs and challenges (as any integration does), the core architecture works and provides a powerful way to give users conversational access to their NetSuite data.
 
@@ -977,7 +977,7 @@ _This guide represents the current state of NetSuite MCP AI integration as of Au
 
 ---
 
-## 🤝 Contributing to This Guide
+## Contributing to This Guide
 
 This guide is open source and we welcome contributions! The repository is hosted at [https://github.com/devszilla/netsuite-mcp-ai-guide](https://github.com/devszilla/netsuite-mcp-ai-guide).
 
