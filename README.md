@@ -1,3 +1,15 @@
+<div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 5px;">
+
+<p>ℹ️ <strong>Important Update (Aug 18, 2025)</strong></p>
+
+<p>As of this week, it appears that the <code>mcp</code> scope no longer works with custom NetSuite integration records unless you are using the Claude-specific integration. This may have been an unintended loophole that Oracle has since closed.</p>
+
+<p><strong>What this means:</strong> You can still build your own OAuth 2.0 integrations with NetSuite, but if you run into a <code>ScopeMismatch</code> error, you’ll need to adjust your approach.</p>
+
+<p>For details, see this excellent follow-up article by <a href="https://www.linkedin.com/in/michoel-chaikin/" target="_blank"><strong>Michoel Chaikin</strong></a> — <a href="https://www.linkedin.com/pulse/breaking-open-netsuite-ai-connector-service-from-claude-chaikin-xqagc/?trackingId=qvPAhi41S7K5kZ91rtgxBw%3D%3D" target="_blank"><em>Breaking Open NetSuite AI Connector Service: From Claude Pro to Any Chatbot</em></a>, written shortly after we troubleshot the issue together. His post outlines a working modified approach.</p>
+
+</div>
+
 <span style="background: #667eea; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">BYOAI</span>
 <span style="background: #10b981; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">MCP</span>
 <span style="background: #f59e0b; color: white; padding: 6px 12px; border-radius: 16px; font-size: 0.8rem; font-weight: 600;">NetSuite</span>
